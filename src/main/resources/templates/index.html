@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <link rel="stylesheet"
+          href="css/index.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
+
+    <title>Survey Results</title>
+</head>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Survey Results</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">
+                        Index
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1>Results for survey: {{surveyTitle}}</h1>
+
+    <div class="col-md-8">
+        <ul class="list-unstyled">
+            <li>
+                {{#questions}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Question: {{body}}
+                    </div>
+                    {{#responses}}
+                    <div class="panel-body">
+                        <ol class="list-group">
+                            <li class="list-group-item">Answer type: {{type}}</li>
+                            <li class="list-group-item">Date: {{date}}</li>
+                            <li class="list-group-item">Session SID: {{sessionSid}}</li>
+                            <li class="list-group-item">
+                                {{#isText}}
+                                <div class="text-response">
+                                    {{#isRecording}}
+                                    <span class="text-response-audio">Response:</span>
+                                    <audio controls>
+                                        <source src="{{response}}" type="audio/mpeg">
+                                        Your browser does not support the audio tag.
+                                    </audio>
+                                    {{/isRecording}}
+                                    {{^isRecording}}
+                                    <p>Response: {{response}}</p>
+                                    {{/isRecording}}
+                                </div>
+                                {{/isText}}
+                                {{#isNumeric}}
+                                Response: {{response}}
+                                {{/isNumeric}}
+                                {{#isYesNo}}
+                                (1: YES, 0: NO) Response: {{response}}
+                                {{/isYesNo}}
+                            </li>
+                        </ol>
+                    </div>
+                    {{/responses}}
+                </div>
+                {{/questions}}
+            </li>
+        </ul>
+    </div>
+</div>
+</html>
