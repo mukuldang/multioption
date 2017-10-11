@@ -17,6 +17,8 @@ public class VoiceQuestionBuilder implements QuestionBuilder {
             "Record your answer after the beep.";
     String numericInstructions =
             "For the next question select a number with the dial pad and then press the pound key";
+    String numericInstructions1 =
+            "For the next question select the appropriate choice with the dial pad and then press the pound key";
     String booleanInstructions =
             "For the next question, press 1 for yes, and 0 for no. Then press the pound key.";
     String booleanInstructions1 =
@@ -40,6 +42,8 @@ public class VoiceQuestionBuilder implements QuestionBuilder {
                 return getRecordTwiML();
             case "numeric":
                 return getGatherResponse(numericInstructions);
+            case "multiple-choice":
+                return getGatherResponse(numericInstructions1);
             case "yes-no":
                 return getGatherResponse(booleanInstructions);
             case "true-false":
