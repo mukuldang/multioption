@@ -1,8 +1,8 @@
 {
   "questions": [
     {
-      "body": "Are you more than 21 years old?",
-      "type": "true-false"
+      "body": "Which is your favourite animal? one for cat , two for dog",
+      "type": "multiple-choice"
     }
   ],
   "title": "Spring"
