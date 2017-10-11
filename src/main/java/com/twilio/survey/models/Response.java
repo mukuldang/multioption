@@ -51,6 +51,7 @@ public class Response {
             this.isText = true;
         } else if (question.getType().compareTo("numeric") == 0) {
             this.isNumeric = true;
+        }
           else if (question.getType().compareTo("multiple-choice") == 0) {
             this.isNumeric = true;
         } else if (question.getType().compareTo("yes-no") == 0) {
