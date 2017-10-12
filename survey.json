@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "body": "Which is your favourite animal? Option 1:Cat,Option 2:Dog",
+      "body": "Which is your favourite animal? (Option 1 : Cat , Option 2 : Dog )",
       "type": "multiple-choice"
     }
   ],
